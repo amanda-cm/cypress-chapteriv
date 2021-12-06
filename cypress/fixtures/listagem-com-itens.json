@@ -1,0 +1,31 @@
+[
+    {
+        "firstName": "Local",
+        "lastName": "Storage",
+        "adress": "Rua dos bobos, número 0",
+        "emailAdress": "jubileu@mail.com",
+        "radioGender": "n",
+        "checks": [
+            "Netflix"
+        ],
+        "selectCountries": "Hong Kong",
+        "selectYears": "1990",
+        "selectMonths": "Junho",
+        "pwd":"Jubil&u123"
+    },
+
+    {
+        "firstName": "Irmão",
+        "lastName": "do Jorel",
+        "adress": "Não informado",
+        "emailAdress": "irmaodojorel@mail.com",
+        "radioGender": "m",
+        "checks": [
+            "Dormir"
+        ],
+        "selectCountries": "Brasil",
+        "selectYears": "2013",
+        "selectMonths": "Junho",
+        "pwd":"Jubil&u123"
+    }
+]
