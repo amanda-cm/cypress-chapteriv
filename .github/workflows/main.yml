@@ -1,0 +1,39 @@
+
+name: Testes
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    #maquinha ou ambiente
+    runs-on: ubuntu-latest
+
+    #passos
+    steps:
+    
+    #download do código
+    - uses: actions/checkout@v2
+    
+    #setup da versão do node
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17
+        cache: 'npm'
+    - run: npm install
+    - run: npm run cy:run
+      continue-on-error: true 
+      
+    - run: npm run report:merge
+    - run: npm run report:mocha
+    
+    #GitHub pages
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKENS}}
+        BRANCH: gh-pages
+        FOLDER: mochawesome-report
