@@ -17,7 +17,7 @@ describe('Cadastro', () => {
         cy.get('input[type=radio][value=n]').check()
         cy.get('input[type=checkbox]').check('Netflix')  //preenche com o value
 
-        cy.get('select#countries').select('Hong Kong', {force:true})
+        cy.get('select#countries').select('Hong Kong', {force:true}) //preenche com o value
         cy.get('select#years').select('1990', {force:true})
         cy.get('select#months').select('Junho', {force:true})
         cy.get('select#days').select('23', {force:true})
@@ -29,4 +29,4 @@ describe('Cadastro', () => {
         //verificar se a url é a da tela de listagem
         cy.url().should('contain', 'listagem') 
     })
-})
+}) 
